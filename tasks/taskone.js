@@ -33,3 +33,4 @@ console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "yd", 
 
 console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "m", "value": 0.9144 }, "convertTo": "ft" }))
 console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "ft", "value": 0.5 }, "convertTo": "m" }))
+console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "km", "value": 0.0006096 }, "convertTo": "ft" }))

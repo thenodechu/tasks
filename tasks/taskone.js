@@ -80,3 +80,4 @@ console.log(resultOne);
 console.log(resultTwo);
 console.log(resultThree);
 
+console.log({ "distance": { "unit": "ft", "value": 3 }, "convertTo": "yd" });

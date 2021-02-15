@@ -14,22 +14,22 @@ class Converter {
 
     }
     convertToValueOfAnotherType(option) {
-        const first = option["distance"]["value"]
-        const second = this.instructionForConverting[option["convertTo"]];
-        const third = this.instructionForConverting[option["distance"]["unit"]];
-        let result = first * third / second;
+        const distanceToConvert = option["distance"]["value"]
+        const valueToConvert = this.instructionForConverting[option["convertTo"]];
+        const valueConvertFrom = this.instructionForConverting[option["distance"]["unit"]];
+        let result = distanceToConvert * valueConvertFrom / valueToConvert;
         return { "unit": option["convertTo"], "value": result };
     }
 }
 
 let converter = new Converter();
 
-console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "m", "value": 0.5 }, "convertTo": "km" }))
-console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "km", "value": 0.5 }, "convertTo": "m" }))
+console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "m", "value": 300 }, "convertTo": "km" }))
+console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "km", "value": 0.005 }, "convertTo": "m" }))
 console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "m", "value": 0.31 }, "convertTo": "in" }))
 console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "in", "value": 0.5 }, "convertTo": "m" }))
 console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "m", "value": 0.5 }, "convertTo": "yd" }))
 console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "yd", "value": 0.5 }, "convertTo": "m" }))
 
-console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "m", "value": 0.5 }, "convertTo": "ft" }))
+console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "m", "value": 0.9144 }, "convertTo": "ft" }))
 console.log(converter.convertToValueOfAnotherType({ "distance": { "unit": "ft", "value": 0.5 }, "convertTo": "m" }))
